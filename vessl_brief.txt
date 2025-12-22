@@ -1,0 +1,351 @@
+VESSL LANDING PAGE – CODEX MASTER INSTRUCTIONS (React + Vite + TypeScript, CSS-only)
+Project: VESSL Fitness App Landing Page Funnel
+Repo: Vite + React 19 + TypeScript, package name: vessl-site
+Primary goal: Mobile-first conversion page that lets ad traffic choose a subscription tier (3-tier pricing) and complete a simple “checkout intent” flow (no real payments yet).
+
+============================================================
+1) NON-NEGOTIABLE OUTCOME
+============================================================
+Build a premium, Apple iOS-style landing page with subtle motion and a clear funnel:
+- Visitor arrives from Facebook/Instagram ads.
+- Page immediately communicates: what VESSL is, why it matters, and how it works.
+- Visitor can compare 3 plans and choose a tier.
+- Selecting a plan opens a lightweight “Get Started” form (email + optional name) and confirms plan selection.
+- On submit: show success state and store selection locally (for now). Provide clear TODO hooks for Stripe later.
+
+Requirements:
+- Mobile-first UX (must look excellent on iPhone width 360–430px).
+- CSS-only styling (no Tailwind). Use a single global stylesheet or CSS Modules (choose ONE and be consistent).
+- Use the provided assets located in /src/assets:
+  - vessl-logo.svg
+  - vessl-fav.svg
+- Use tasteful, minimal, premium animations:
+  - CSS transitions for hovers and focus states.
+  - CSS keyframes for ambient background gradient movement.
+  - Optional tiny particle effect via CSS (no heavy canvas).
+  - Respect prefers-reduced-motion.
+
+Do NOT:
+- Do not refactor unrelated repo files.
+- Do not add heavy animation libraries.
+- Do not introduce backend code.
+- Do not create complex routing; keep this as a single-page landing funnel.
+
+============================================================
+2) BRAND & POSITIONING (COPY RULES)
+============================================================
+Brand name: VESSL
+Straplines:
+- Primary: “Strength in Motion”
+- Secondary CTA theme: “Be The First”
+
+Brand personality:
+- Minimalist, strong, structured, science-based.
+- No hype, no gimmicks, no transformation-bait.
+- Calm confidence. Short sentences. Clear benefits.
+
+Target audience (B2C):
+- Beginners & intermediates who need structure.
+- Busy professionals who need efficient, realistic workouts.
+- People returning from injury who want mobility-first strength progression.
+
+Tone:
+- Direct, modern, supportive.
+- Avoid slang-heavy gym culture.
+- Keep it human and grounded.
+
+============================================================
+3) PAGE IA (SECTION ORDER) – MOBILE FIRST
+============================================================
+Single page with anchored sections. Proposed order:
+
+A) Sticky Top Bar
+- Left: VESSL logo
+- Right: CTA button “Choose your plan” (scrolls to pricing)
+- On scroll: background blur + subtle border, iOS-style.
+
+B) Hero (above the fold)
+- Headline: Strength in Motion
+- Subheadline: Structured training that fits real life. Build strength, move better, stay consistent.
+- Primary CTA: “Choose your plan” (scroll)
+- Secondary CTA: “Be The First” (opens email capture modal or scrolls to form section)
+- Supporting micro-copy: “Launching soon. Founding pricing available.”
+- Visual: abstract iOS-style “device glass card” mock (CSS-only) + moving gradient background.
+
+C) Social Proof / Trust Row
+- Use placeholder proof that is honest and non-fabricated:
+  - “Built for consistency, not chaos.”
+  - “Structured programmes, clear progression.”
+  - “Beginner-friendly, scalable sessions.”
+Do NOT invent fake stats (no “10k users” etc).
+Optionally use icon bullets.
+
+D) How It Works (3 steps)
+1. Pick your plan
+2. Choose your focus (strength, mobility, conditioning)
+3. Follow the programme, track progress
+
+E) Benefits Grid (cards)
+- “Programmes that progress”
+- “Sessions that fit your week”
+- “Mobility-first strength”
+- “Simple tracking, real momentum”
+
+F) Built For (audience cards)
+- Busy professionals
+- Beginners building confidence
+- Injury comeback / longevity
+
+G) App Preview (placeholder)
+- Section title: “A training system you can actually stick to.”
+- Two-column on desktop, stacked on mobile.
+- Add 2–3 “feature chips” (e.g., “On-demand sessions”, “Programmes”, “Progress tracking”).
+- Use a CSS “phone frame” with placeholder screens (simple rectangles), and a TODO comment for real screenshots.
+
+H) Pricing Table (3 tiers) – CONVERSION CORE
+- Must be very readable on mobile.
+- Include monthly toggle only if it won’t add complexity. If included, default to monthly.
+- One plan marked “Most Popular” (middle tier).
+- Each plan has:
+  - Name
+  - Price per month
+  - Short description
+  - Included bullets
+  - CTA: “Choose [Tier]”
+- When user clicks a plan:
+  - Highlight it visually.
+  - Smooth scroll to “Get Started” form.
+  - Pre-fill the chosen plan in the form UI.
+
+I) Get Started Form (simple)
+Fields:
+- Email (required)
+- First name (optional)
+- Hidden: chosen plan
+Action:
+- On submit: validate email format; store {email,firstName,plan,timestamp} to localStorage and to console.log.
+- Show success message and “What happens next” text:
+  - “We’ll email you launch access and founding pricing.”
+- Include a privacy micro-line: “No spam. Unsubscribe anytime.” (no legal claims beyond that).
+
+J) FAQ (objections)
+6–8 concise questions:
+- “Is VESSL for beginners?”
+- “What equipment do I need?”
+- “Can I train around an old injury?”
+- “How long are sessions?”
+- “Can I cancel anytime?”
+- “When do I get access?”
+
+K) Final CTA (bottom)
+- Headline: “Be The First.”
+- Button: “Choose your plan”
+- Secondary: “Join the waitlist” (scroll to form)
+- Footer: minimal links and copyright.
+
+============================================================
+4) PRICING MODEL (DEFAULT – EDITABLE)
+============================================================
+Use GBP pricing (can be easily changed later). “Founding pricing” to reduce commitment.
+
+Tier 1: STARTER
+- £9.99 / month
+- Best for: getting consistent
+Includes:
+- Full on-demand workout library
+- Beginner-friendly programmes
+- Weekly scheduling guidance
+CTA: “Choose Starter”
+
+Tier 2: PROGRESS (Most Popular)
+- £14.99 / month
+- Best for: structured progression
+Includes:
+- Everything in Starter
+- Structured progression tracks (strength/mobility/conditioning)
+- Progress tracking (check-ins, streaks)
+CTA: “Choose Progress”
+
+Tier 3: COACH
+- £24.99 / month
+- Best for: deeper support
+Includes:
+- Everything in Progress
+- Personalised plan inputs (questionnaire, preferences)
+- Priority support / feedback channel (placeholder)
+CTA: “Choose Coach”
+
+Note: Do not imply 1:1 coaching unless confirmed. Use careful wording: “priority support” not “private coach”.
+Add a small line under pricing: “Prices may change after launch. Founding members keep founding rate.”
+
+============================================================
+5) DESIGN SYSTEM (CSS TOKENS) – USE EXACT PALETTE
+============================================================
+Palette (must be implemented as CSS variables):
+- Charcoal Black: #1D1D1D
+- Off-White Mist: #E8EAE8
+- Core Teal: #4CA5A5
+- Pale Aqua: #98DAD8
+- Deep Ocean Grey: #2C393A
+
+Design style:
+- Premium iOS “glass” aesthetic: frosted cards, subtle borders, soft shadows.
+- High whitespace, clear hierarchy, large headings.
+- Buttons: rounded, high-contrast, with micro-interactions.
+- Avoid loud gradients; keep movement subtle.
+
+Typography:
+- Use a system font stack for iOS-like feel:
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+- Type scale:
+  - Hero H1: clamp(2.2rem, 5vw, 3.25rem)
+  - H2: clamp(1.5rem, 3vw, 2.1rem)
+  - Body: 1rem–1.05rem with 1.5–1.7 line-height
+- Letter spacing: slightly tightened on headings.
+
+Layout:
+- Max width: 1120px
+- Gutters: 16px mobile, 24px tablet, 32px desktop
+- Sections padding: 56–88px vertical depending on screen.
+
+Accessibility:
+- Focus styles visible (outline).
+- Contrast: teal on dark must be readable.
+- Add prefers-reduced-motion handling to disable background animations and scroll reveals.
+
+============================================================
+6) MOTION SPEC (CSS-ONLY)
+============================================================
+Ambient background:
+- Use a pseudo-element on the body or hero with a slow-moving gradient animation.
+- Add subtle “particles” using CSS (e.g., radial-gradient dots) with slow drift.
+- Keep CPU usage low.
+
+Micro-interactions:
+- Buttons: translateY(-1px) on hover, active state push in.
+- Cards: border + shadow lift on hover (desktop only).
+- Pricing selection: smooth highlight and checkmark.
+
+Scroll behavior:
+- Smooth scroll to anchors.
+- Optional: simple CSS-based reveal using intersection observer in React (tiny custom hook OK). Keep minimal.
+
+Reduced motion:
+- If prefers-reduced-motion: reduce, disable keyframes and reveals.
+
+============================================================
+7) IMPLEMENTATION PLAN (FILES TO CREATE / EDIT)
+============================================================
+Do this in small, safe steps. Keep diffs clear.
+
+A) Update favicon and document head
+- Edit index.html to reference /src/assets/vessl-fav.svg as favicon.
+- Set title: “VESSL | Strength in Motion”
+- Meta description: concise fitness platform positioning.
+- Add viewport already present (verify).
+
+B) Component structure (recommended)
+- /src/components/
+  - StickyNav.tsx
+  - Hero.tsx
+  - TrustRow.tsx
+  - HowItWorks.tsx
+  - Benefits.tsx
+  - Audience.tsx
+  - AppPreview.tsx
+  - Pricing.tsx
+  - GetStartedForm.tsx
+  - FAQ.tsx
+  - Footer.tsx
+
+C) State handling
+- In App.tsx, manage selectedPlan state:
+  type PlanId = "starter" | "progress" | "coach";
+  const [selectedPlan,setSelectedPlan] = useState<PlanId | null>(null);
+
+- Pricing section calls setSelectedPlan(planId) and scrolls to form.
+- Form reads selectedPlan and shows it clearly.
+
+D) CSS approach (choose ONE):
+Option 1 (preferred): /src/styles/global.css and import it in main.tsx.
+- Define :root CSS variables.
+- Build reusable utility classes (container, section, glassCard, button, etc).
+- Avoid too many one-off styles.
+
+Option 2: CSS Modules per component (more files). If you pick this, be consistent.
+
+E) Animation CSS
+- Implement keyframes in global.css
+- Apply only to hero background and a few accents.
+- Keep it subtle.
+
+F) Data placeholders
+- Create a plans constant with name, price, bullets.
+- FAQ array with questions/answers.
+
+============================================================
+8) CODING STYLE RULES (DO NOT VIOLATE)
+============================================================
+TypeScript + React rules:
+- Use function components with arrow functions and parentheses around params: const X = ({...}:{...}) => {...}
+- Keep object braces tight in code where reasonable (minimal spaces) to match existing preference.
+- Keep components small and readable.
+- Do not add dependencies unless absolutely necessary.
+- No console noise except for the intentional submit log.
+
+Forms:
+- Simple validation only.
+- Clear error messages.
+- Disable submit while “submitting” (simulate with short timeout optional).
+
+============================================================
+9) COPY BLOCKS (READY TO USE)
+============================================================
+Hero:
+H1: Strength in Motion
+Sub: A structured training system built for real life. Programmes that progress, sessions you can actually stick to.
+Primary CTA: Choose your plan
+Secondary CTA: Be The First
+Micro: Launching soon. Founding members get founding pricing.
+
+Trust row:
+- Structured programmes
+- Mobility-first strength
+- Built for consistency
+
+How it works:
+- Pick your plan
+- Choose your focus
+- Build momentum, track progress
+
+Pricing descriptions:
+Starter: Start strong with simple structure.
+Progress: The full system for consistent progress.
+Coach: Extra guidance, faster clarity.
+
+Form:
+Title: Get started
+Helper: Choose your plan, drop your email, and we’ll send launch access.
+Success title: You’re in.
+Success body: We’ll email you when VESSL opens, with your founding pricing.
+
+============================================================
+10) ACCEPTANCE CHECKLIST (WHAT “DONE” MEANS)
+============================================================
+- Page loads with VESSL logo and correct favicon.
+- Mobile-first: no horizontal scrolling, no cramped sections.
+- Motion feels premium, not gimmicky.
+- Pricing selection works, plan highlights, scrolls to form.
+- Form validates email, shows errors, stores submission to localStorage.
+- All sections present and styled consistently with palette.
+- Prefers-reduced-motion disables animations.
+- Lighthouse performance is reasonable (no huge images, no heavy scripts).
+
+============================================================
+11) TODO HOOKS (FUTURE INTEGRATIONS, DO NOT IMPLEMENT NOW)
+============================================================
+- Stripe checkout / subscriptions
+- Email provider integration (Mailchimp / Klaviyo)
+- Analytics (Meta pixel, GA4)
+- Real app screenshots and video
+- Testimonials and real proof metrics
