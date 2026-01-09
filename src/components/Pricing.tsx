@@ -24,7 +24,7 @@ const Pricing = ({ plans, selectedPlan, onSelect, sectionRef }: PricingProps) =>
           return (
             <div
               key={plan.id}
-              className={`plan-card glass ${active ? 'active' : ''} ${plan.badge ? 'popular' : ''}`}
+              className={`plan-card ${active ? 'active' : ''} ${plan.badge ? 'popular' : ''}`}
             >
               {plan.badge && <span className="badge">{plan.badge}</span>}
               <div className="plan-head">

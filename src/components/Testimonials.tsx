@@ -18,30 +18,21 @@ const testimonials = [
 ]
 
 const Testimonials = () => (
-  <section className="section reveal panel">
+  <section className="section reveal">
     <div className="container">
       <div className="section-header centered">
-        <p className="eyebrow">What our users say</p>
-        <h2>Trusted by people who want to move better and stay consistent.</h2>
+        <p className="eyebrow">What people say</p>
+        <h2>Confidence built on consistency.</h2>
+        <p className="body">Real words from early VESSL users and testers.</p>
       </div>
       <div className="testimonial-grid">
         {testimonials.map((item) => (
-          <div key={item.name} className="testimonial-card glass">
-            <div className="image-placeholder">
-              Drop in a lifestyle or training photo for {item.name}.
-            </div>
-            <div className="testimonial-overlay">
-              <p className="quote">{item.quote}</p>
-              <p className="meta">
-                {item.name} - {item.role}
-              </p>
-            </div>
+          <div key={item.name} className="testimonial-card">
+            <p className="testimonial-quote">{item.quote}</p>
+            <p className="testimonial-meta">
+              {item.name} - {item.role}
+            </p>
           </div>
-        ))}
-      </div>
-      <div className="slider-dots" aria-hidden="true">
-        {testimonials.map((_, index) => (
-          <span key={index} className={`dot ${index === 0 ? 'active' : ''}`} />
         ))}
       </div>
     </div>

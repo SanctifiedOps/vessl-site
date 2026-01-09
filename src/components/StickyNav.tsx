@@ -19,15 +19,23 @@ const StickyNav = ({ onPlanClick, onWaitlistClick }: StickyNavProps) => {
   return (
     <header className={`sticky-nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
-        <div className="brand">
+        <a className="brand" href="#home" aria-label="VESSL home">
           <img src={logo} alt="VESSL logo" className="brand-mark" />
-        </div>
+          <span className="brand-name">VESSL</span>
+        </a>
+        <nav className="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#trainers">Coaches</a>
+          <a href="#pricing">Plans</a>
+          <a href="#faq">FAQ</a>
+        </nav>
         <div className="nav-actions">
           <button className="btn ghost" onClick={onWaitlistClick}>
-            Be The First
+            Join waitlist
           </button>
           <button className="btn primary" onClick={onPlanClick}>
-            Choose your plan
+            Choose plan
           </button>
         </div>
       </div>

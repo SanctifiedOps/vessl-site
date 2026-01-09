@@ -65,9 +65,9 @@ const GetStartedForm = ({ selectedPlan, sectionRef }: GetStartedFormProps) => {
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Get started</p>
-          <h2>Choose your plan, drop your email, and we&apos;ll send launch access.</h2>
+          <h2>Lock in founding pricing and get first access.</h2>
         </div>
-        <div className="form-card glass">
+        <div className="form-card">
           <div className="selected-plan">
             <p>Selected plan</p>
             <span className="pill">{planLabels[planToStore]}</span>
@@ -80,7 +80,7 @@ const GetStartedForm = ({ selectedPlan, sectionRef }: GetStartedFormProps) => {
               <h3>You&apos;re in.</h3>
               <p>We&apos;ll email you when VESSL opens, with your founding pricing.</p>
               <p className="hint">No spam. Unsubscribe anytime.</p>
-              <p className="microcopy">What happens next: expect an email with setup steps.</p>
+              <p className="microcopy">What happens next: expect launch details and next steps.</p>
             </div>
           ) : (
             <form className="form-grid" onSubmit={handleSubmit} noValidate>
@@ -115,7 +115,7 @@ const GetStartedForm = ({ selectedPlan, sectionRef }: GetStartedFormProps) => {
                 </p>
               )}
               <button className="btn primary block" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Get started'}
+                {isSubmitting ? 'Submitting...' : 'Join now'}
               </button>
               <p className="microcopy privacy">No spam. Unsubscribe anytime.</p>
             </form>

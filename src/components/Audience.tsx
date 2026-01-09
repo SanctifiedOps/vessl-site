@@ -1,19 +1,24 @@
 type AudienceProps = {
-  items: { title: string; copy: string }[]
+  items: { name: string; role: string; copy: string }[]
 }
 
 const Audience = ({ items }: AudienceProps) => (
-  <section className="section reveal" id="audience">
+  <section className="section reveal" id="trainers">
     <div className="container">
       <div className="section-header">
-        <p className="eyebrow">Built for</p>
-        <h2>Designed for how you really train.</h2>
+        <p className="eyebrow">Professional coaches</p>
+        <h2>Guidance that keeps you strong and steady.</h2>
+        <p className="body">Meet the style of coaching behind the VESSL training system.</p>
       </div>
-      <div className="card-grid">
+      <div className="trainer-grid">
         {items.map((item) => (
-          <div key={item.title} className="info-card glass">
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
+          <div key={item.name} className="trainer-card">
+            <div className="trainer-photo">Coach portrait placeholder</div>
+            <div className="trainer-body">
+              <h3>{item.name}</h3>
+              <p className="trainer-role">{item.role}</p>
+              <p className="body">{item.copy}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -3,7 +3,9 @@ import StickyNav from './components/StickyNav'
 import HeroShowcase from './components/HeroShowcase'
 import FeatureTags from './components/FeatureTags'
 import HighlightSplit from './components/HighlightSplit'
-import WhyChoose from './components/WhyChoose'
+import Benefits from './components/Benefits'
+import AppPreview from './components/AppPreview'
+import Audience from './components/Audience'
 import Pricing from './components/Pricing'
 import GetStartedForm from './components/GetStartedForm'
 import Testimonials from './components/Testimonials'
@@ -49,6 +51,54 @@ const plans: Plan[] = [
       'Personalised plan inputs',
       'Priority support / feedback channel',
     ],
+  },
+]
+
+const stats = [
+  { value: '03', label: 'Training paths' },
+  { value: '30-45', label: 'Minute sessions' },
+  { value: '12', label: 'Week progressions' },
+  { value: '24/7', label: 'On-demand access' },
+]
+
+const programs = [
+  {
+    title: 'Strength Foundations',
+    meta: '4-week block',
+    copy: 'Build base strength with guided tempo, form cues, and weekly progressions.',
+  },
+  {
+    title: 'Mobility Power',
+    meta: 'Daily reset',
+    copy: 'Keep joints happy and movement clean with mobility-first strength sessions.',
+  },
+  {
+    title: 'Conditioning Flow',
+    meta: '30-minute push',
+    copy: 'Short, focused conditioning sessions that build stamina without burnout.',
+  },
+  {
+    title: 'Hybrid Builder',
+    meta: 'Performance mix',
+    copy: 'Blend strength and mobility with flexible programming for busy weeks.',
+  },
+]
+
+const coaches = [
+  {
+    name: 'Riley Chen',
+    role: 'Strength + Mobility',
+    copy: 'Precision-focused coaching that keeps your movement clean and confident.',
+  },
+  {
+    name: 'Amara Knox',
+    role: 'Conditioning',
+    copy: 'Efficient, effective sessions designed to build stamina without stress.',
+  },
+  {
+    name: 'Julian Reyes',
+    role: 'Progression Coach',
+    copy: 'Structured progression that makes it easy to see measurable wins.',
   },
 ]
 
@@ -133,17 +183,11 @@ const App = () => {
       <StickyNav onPlanClick={scrollToPricing} onWaitlistClick={scrollToForm} />
       <main>
         <HeroShowcase onPrimaryClick={scrollToPricing} onSecondaryClick={scrollToForm} />
-        <FeatureTags
-          items={[
-            'Structured programmes',
-            '3 levels of difficulty',
-            'Progress tracking',
-            'Mobility + strength',
-            'Community support',
-          ]}
-        />
+        <FeatureTags items={stats} />
         <HighlightSplit onPrimaryClick={scrollToPricing} />
-        <WhyChoose onPrimaryClick={scrollToPricing} />
+        <Benefits items={programs} />
+        <AppPreview chips={['Strength', 'Mobility', 'Conditioning', 'Recovery']} />
+        <Audience items={coaches} />
         <Pricing
           plans={plans}
           selectedPlan={selectedPlan}

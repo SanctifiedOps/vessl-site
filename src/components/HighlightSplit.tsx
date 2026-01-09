@@ -3,29 +3,27 @@ type HighlightSplitProps = {
 }
 
 const HighlightSplit = ({ onPrimaryClick }: HighlightSplitProps) => (
-  <section className="section panel reveal">
+  <section className="section reveal" id="about">
     <div className="container split-grid">
       <div className="split-copy">
-        <p className="eyebrow">Elevate your fitness</p>
-        <h2>Structured training built for real life.</h2>
+        <p className="eyebrow">About VESSL</p>
+        <h2>Build a stronger body with a calmer system.</h2>
         <p className="body">
-          Join now to access tailored training plans, progress tracking, and momentum from a calm,
-          supportive community. Swap any exercise, keep the streak alive, and know exactly what to
-          do next.
+          VESSL blends strength, mobility, and conditioning into a clear weekly rhythm. Train hard,
+          recover smart, and keep momentum without the noise.
         </p>
-        <div className="chip-row">
-          <span className="pill subtle">50+ session templates</span>
-          <span className="pill subtle">Mobility + conditioning</span>
-          <span className="pill subtle">Scheduling guidance</span>
-          <span className="pill subtle">Community accountability</span>
-        </div>
+        <ul className="feature-list">
+          <li>Progressive plans you can follow without guesswork.</li>
+          <li>Mobility-first strength for longevity and confidence.</li>
+          <li>Flexible sessions that fit into real schedules.</li>
+        </ul>
         <button className="btn primary" onClick={onPrimaryClick}>
-          Get started
+          Start training
         </button>
       </div>
-      <div className="media-card glass">
-        <div className="image-placeholder">
-          Replace with a hero training photo (pushups, kettlebells, or mobility work).
+      <div className="split-media">
+        <div className="image-frame">
+          Drop in a coaching or training photo that represents the VESSL style.
         </div>
       </div>
     </div>
