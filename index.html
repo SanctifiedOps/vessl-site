@@ -1,17 +1,836 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/vessl-fav.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VESSL | Strength in Motion</title>
-    <meta
-      name="description"
-      content="VESSL is a structured training system built for real life. Build strength, move better, and stay consistent with programmes that progress."
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<title>VESSL | Strength in Motion</title>
+<meta name="description" content="VESSL is a structured, movement-first training system built for real life. Build strength, move better, and stay consistent.">
+<!-- Stylesheets -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/meanmenu.min.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<link href="assets/css/vessl-overrides.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="assets/images/vessl-fav.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/vessl-fav.svg" type="image/svg+xml">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+
+<body>
+
+<div class="page-wrapper">
+	
+	<!-- Cursor -->
+	<div class="cursor"></div>
+	<div class="cursor-follower"></div>
+	<!-- Cursor End -->
+ 	
+	<!-- Preloader -->
+	<div class="loader-wrap">
+		<div class="preloader">
+			<div class="preloader-close">x</div>
+			<div id="handle-preloader" class="handle-preloader">
+				<div class="animation-preloader">
+					<div class="txt-loading">
+						<span data-text-preloader="S" class="letters-loading">S</span>
+						<span data-text-preloader="T" class="letters-loading">T</span>
+						<span data-text-preloader="R" class="letters-loading">R</span>
+						<span data-text-preloader="E" class="letters-loading">E</span>
+						<span data-text-preloader="N" class="letters-loading">N</span>
+						<span data-text-preloader="G" class="letters-loading">G</span>
+						<span data-text-preloader="T" class="letters-loading">T</span>
+						<span data-text-preloader="H" class="letters-loading">H</span>
+						<span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+						<span data-text-preloader="I" class="letters-loading">I</span>
+						<span data-text-preloader="N" class="letters-loading">N</span>
+						<span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+						<span data-text-preloader="M" class="letters-loading">M</span>
+						<span data-text-preloader="O" class="letters-loading">O</span>
+						<span data-text-preloader="T" class="letters-loading">T</span>
+						<span data-text-preloader="I" class="letters-loading">I</span>
+						<span data-text-preloader="O" class="letters-loading">O</span>
+						<span data-text-preloader="N" class="letters-loading">N</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+	
+	<!-- Main Header -->
+	<header class="main-header header-style-one">
+		
+		<!-- Header Lower -->
+		<div class="header-lower">
+			<div class="auto-container">
+				<div class="inner-container">
+					<div class="d-flex justify-content-between align-items-center flex-wrap">
+						
+						<div class="logo-box">
+							<div class="logo"><a href="#home"><img src="assets/images/logo.svg" alt="VESSL" title="VESSL"></a></div>
+						</div>
+						
+						<div class="nav-outer d-flex flex-wrap">
+							<!-- Main Menu -->
+							<nav class="main-menu navbar-expand-md">
+								<div class="navbar-header">
+									<!-- Toggle Button -->    	
+									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										<li><a href="#home">Home</a></li>
+										<li><a href="#pillars">Pillars</a></li>
+										<li><a href="#method">Method</a></li>
+										<li><a href="#how">How it works</a></li>
+										<li><a href="#pricing">Pricing</a></li>
+										<li><a href="#faq">FAQ</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+
+						<!-- Main Menu End-->
+						<div class="outer-box d-flex align-items-center flex-wrap">
+
+							<!-- Button Box -->
+							<div class="main-header_buttons">
+								<a href="#get-started" class="template-btn btn-style-two">
+									<span class="btn-wrap">
+										<span class="text-one">Be the First</span>
+										<span class="text-two">Be the First</span>
+									</span>
+								</a>
+								<a href="#pricing" class="template-btn btn-style-one">
+									<span class="btn-wrap">
+										<span class="text-one">Choose your plan</span>
+										<span class="text-two">Choose your plan</span>
+									</span>
+								</a>
+							</div>
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+							</div>
+
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Header Lower-->
+		
+		<!-- Mobile Menu  -->
+		<div class="mobile-menu">
+			<div class="menu-backdrop"></div>
+			<div class="close-btn"><span class="icon fa-solid fa-xmark fa-fw"></span></div>
+			
+			<nav class="menu-box">
+				<div class="nav-logo"><a href="#home"><img src="assets/images/mobile-logo.svg" alt="VESSL" title="VESSL"></a></div>
+				<div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+			</nav>
+		</div>
+		<!-- End Mobile Menu -->
+	
+	</header>
+	<!-- End Main Header -->
+	
+	<!-- Slider One -->
+	<section class="slider-one" id="home">
+		<div class="slider-one_static">
+					<div class="slider-one_pattern" style="background-image:url(assets/images/main-slider/pattern-1.png)"></div>
+					<div class="slider-one_pattern-two" style="background-image:url(assets/images/main-slider/pattern-2.png)"></div>
+					<div class="slider-one_pattern-four" style="background-image:url(assets/images/main-slider/pattern-4.png)"></div>
+					<div class="auto-container">
+						<div class="row clearfix">
+							<!-- Content Column -->
+							<div class="slider-one_content col-lg-7 col-md-12 col-sm-12">
+								<div class="slider-one_content-inner">
+									<div class="slider-one_title"><i><img src="assets/images/main-slider/hand.png" alt="" /></i> Strength in Motion</div>
+									<h1 class="slider-one_heading">Structured training for real life <span>built to last</span></h1>
+									<div class="slider-one_text">A movement-first system designed for beginners, busy professionals, and anyone who wants a clear, science-backed plan.</div>
+									<div class="slider-one_button d-flex align-items-center flex-wrap">
+										<a href="#pricing" class="template-btn btn-style-one">
+											<span class="btn-wrap">
+												<span class="text-one">Choose your plan</span>
+												<span class="text-two">Choose your plan</span>
+											</span>
+										</a>
+										<a href="#get-started" class="template-btn btn-style-two">
+											<span class="btn-wrap">
+												<span class="text-one">Be the First</span>
+												<span class="text-two">Be the First</span>
+											</span>
+										</a>
+									</div>
+									<div class="slider-one_text">Launching soon. Founding pricing available.</div>
+								</div>
+							</div>
+							<!-- Image Column -->
+							<div class="slider-one_image-column col-lg-5 col-md-12 col-sm-12">
+								<div class="slider-one_pattern-three" style="background-image:url(assets/images/main-slider/pattern-3.png)"></div>
+								<div class="slider-one_image-outer">
+									<div class="slider-one_graph">
+										<div class="slider-one_graph-title">Weekly plan <span>12 weeks <sup><i class="fa-solid fa-caret-up fa-fw"></i>progress</sup></span></div>
+										<img src="assets/images/main-slider/graph.png" alt="" />
+									</div>
+									<div class="slider-one_image">
+										<img src="assets/images/vessl-hero.gif" alt="VESSL app preview" />
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+	</section>
+	<!-- End Main Slider Section -->
+
+	<!-- Services One -->
+	<section class="services-one" id="pillars">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="sec-title_title">Training pillars</div>
+				<h2 class="sec-title_heading">Built for movement, built for <br> <span>consistency</span></h2>
+			</div>
+			<div class="row clearfix">
+
+				<!-- Service Block One -->
+				<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
+					<div class="service-block_one-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="service-block_one-icon">
+							<i class="icon-speaker1"></i>
+						</div>
+						<h5 class="service-block_one-heading"><a href="#pricing">Strength foundations</a></h5>
+						<div class="service-block_one-text">Progressive strength blocks with clear cues and weekly structure.</div>
+						<div class="lower-box d-flex justify-content-between align-items-center flex-wrap">
+							<div class="service-block_one-number">01</div>
+							<a class="service-block_one-join" href="#pricing">See the plan <i class="fa-solid fa-plus fa-fw"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block One -->
+				<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
+					<div class="service-block_one-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="service-block_one-icon">
+							<i class="icon-marketing"></i>
+						</div>
+						<h5 class="service-block_one-heading"><a href="#pricing">Mobility power</a></h5>
+						<div class="service-block_one-text">Mobility-first strength sessions that keep joints happy and movement clean.</div>
+						<div class="lower-box d-flex justify-content-between align-items-center flex-wrap">
+							<div class="service-block_one-number">02</div>
+							<a class="service-block_one-join" href="#pricing">See the plan <i class="fa-solid fa-plus fa-fw"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Block One -->
+				<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
+					<div class="service-block_one-inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="service-block_one-icon">
+							<i class="icon-vector"></i>
+						</div>
+						<h5 class="service-block_one-heading"><a href="#pricing">Conditioning flow</a></h5>
+						<div class="service-block_one-text">Short, focused conditioning sessions that build stamina without burnout.</div>
+						<div class="lower-box d-flex justify-content-between align-items-center flex-wrap">
+							<div class="service-block_one-number">03</div>
+							<a class="service-block_one-join" href="#pricing">See the plan <i class="fa-solid fa-plus fa-fw"></i></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Services One -->
+	
+	<!-- About One -->
+	<section class="about-one" id="method">
+		<div class="auto-container">
+			<div class="row clearfix">
+
+				<!-- Tab Column -->
+				<div class="about-one_tab-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
+					<div class="about-one_tab-outer">
+						<div class="about-one_tab-shadow" style="background-image:url(assets/images/background/tab-shadow.png)"></div>
+						<div class="about-one_tab-image">
+							<img src="assets/images/resource/tabs.png" alt="Training plan overview" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab Column -->
+				<div class="about-one_content-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
+					<div class="about-one_content-outer">
+						<!-- Sec Title -->
+						<div class="sec-title">
+							<div class="sec-title_title">The VESSL method</div>
+							<h2 class="sec-title_heading">Your body is the vessel. <span>Train it with purpose.</span></h2>
+						</div>
+						<p>VESSL is a structured, science-backed training system focused on longevity and movement quality. No hype. No gimmicks. Just a plan you can follow.</p>
+						<p>Programmes adapt to your level with strength, mobility, and conditioning tracks you can mix as your week changes.</p>
+						<div class="about-one_options d-flex align-items-center flex-wrap">
+							<a href="#how" class="template-btn btn-style-one">
+								<span class="btn-wrap">
+									<span class="text-one">How it works</span>
+									<span class="text-two">How it works</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End About One -->
+	
+	<!-- Choose One -->
+	<section class="choose-one">
+		<div class="auto-container">
+			<div class="inner-container">
+				<!-- Sec Title -->
+				<div class="sec-title light centered">
+					<div class="sec-title_title">Built for real life</div>
+					<h2 class="sec-title_heading">Structure that keeps you <br> <span>moving forward</span></h2>
+				</div>
+				<div class="row clearfix">
+
+					<!-- Counter Block One -->
+					<div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+						<div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="counter-block_one-icon fa-solid fa-dumbbell fa-fw"></div>
+							<div class="counter-block_one-count"><span class="odometer" data-count="3"></span><i></i></div>
+							<div class="counter-block_one-text">Three training pillars: strength, mobility, conditioning.</div>
+						</div>
+					</div>
+
+					<!-- Counter Block One -->
+					<div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+						<div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="150ms" data-wow-duration="1500ms">
+							<div class="counter-block_one-icon fa-solid fa-clock fa-fw"></div>
+							<div class="counter-block_one-count"><span class="odometer" data-count="30"></span><i></i></div>
+							<div class="counter-block_one-text">Thirty minute sessions that fit busy schedules.</div>
+						</div>
+					</div>
+
+					<!-- Counter Block One -->
+					<div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+						<div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="counter-block_one-icon fa-solid fa-chart-line fa-fw"></div>
+							<div class="counter-block_one-count"><span class="odometer" data-count="12"></span><i></i></div>
+							<div class="counter-block_one-text">Twelve week blocks with measurable progress.</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Choose One -->
+
+	<!-- Answer One -->
+	<section class="answer-one">
+		<div class="auto-container">
+			<div class="row clearfix">
+
+				<!-- Tab Column -->
+				<div class="answer-one_title-column col-lg-5 col-md-12 col-sm-12">
+					<div class="answer-one_title-outer">
+						<!-- Sec Title -->
+						<div class="sec-title title-anim">
+							<div class="sec-title_title">Why VESSL</div>
+							<h2 class="sec-title_heading">Built for <span>consistency</span> and long term strength</h2>
+						</div>
+						<ul class="answer-one_list">
+							<li><i class="fa-solid fa-check fa-fw"></i>Structured weekly plans you can follow without guesswork.</li>
+							<li><i class="fa-solid fa-check fa-fw"></i>Mobility-first strength that respects joints and recovery.</li>
+							<li><i class="fa-solid fa-check fa-fw"></i>Simple tracking to build momentum and confidence.</li>
+						</ul>
+						<div class="answer-one_button">
+							<a href="#pricing" class="template-btn btn-style-one">
+								<span class="btn-wrap">
+									<span class="text-one">Choose your plan</span>
+									<span class="text-two">Choose your plan</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab Column -->
+				<div class="answer-one_content-column col-lg-7 col-md-12 col-sm-12">
+					<div class="answer-one_content-outer">
+						<div class="answer-one_pattern" style="background-image:url(assets/images/background/faq-shadow.png)"></div>
+						<div class="answer-one_image">
+							<img src="assets/images/resource/faq.png" alt="VESSL training overview" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Answer One -->
+
+	<!-- Steps One -->
+	<section class="steps-one" id="how">
+		<div class="steps-one_bg" style="background-image:url(assets/images/background/step-1_bg.png)"></div>
+		<div class="steps-one_icon" style="background-image:url(assets/images/icons/step.png)"></div>
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="circle-layer"></div>
+				<div class="dots-layer">
+					<span class="dot-one"></span>
+					<span class="dot-two"></span>
+				</div>
+			
+				<!-- Sec Title -->
+				<div class="sec-title">
+					<div class="sec-title_title">How it works</div>
+					<h2 class="sec-title_heading">Three steps to steady <span>progress</span></h2>
+				</div>
+				<div class="steps-one_button">
+					<a href="#get-started" class="template-btn btn-style-two">
+						<span class="btn-wrap">
+							<span class="text-one">Start with VESSL</span>
+							<span class="text-two">Start with VESSL</span>
+						</span>
+					</a>
+				</div>
+				<div class="row clearfix">
+					<!-- Column -->
+					<div class="column col-lg-6 col-md-12 col-sm-12">
+						<!-- Step Block One -->
+						<div class="step-block_one">
+							<div class="step-block_one-inner">
+								<div class="step-block_one-steps">step 01</div>
+								<h5 class="step-block_one-title">Pick your plan</h5>
+								<div class="step-block_one-text">Choose Starter, Progress, or Coach based on the support you want.</div>
+								<div class="step-block_one-content">
+									<div class="image">
+										<img src="assets/images/resource/step-1.png" alt="Pick your plan" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Column -->
+					<div class="column col-lg-6 col-md-12 col-sm-12">
+
+						<!-- Step Block One -->
+						<div class="step-block_one">
+							<div class="step-block_one-inner">
+								<div class="step-block_one-steps">step 02</div>
+								<h5 class="step-block_one-title">Choose your focus</h5>
+								<div class="step-block_one-text">Focus on strength, mobility, or conditioning and adjust week to week.</div>
+								<div class="step-block_one-content">
+									<div class="image">
+										<img src="assets/images/resource/step-2.png" alt="Choose your focus" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Step Block One -->
+						<div class="step-block_one">
+							<div class="step-block_one-inner">
+								<div class="step-block_one-steps">step 03</div>
+								<h5 class="step-block_one-title">Build momentum</h5>
+								<div class="step-block_one-text">Follow the program, track sessions, and progress at your pace.</div>
+								<div class="step-block_one-content">
+									<div class="image">
+										<img src="assets/images/resource/step-3.png" alt="Build momentum" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Steps One -->
+
+	<!-- Price One -->
+	<section class="price-one" id="pricing">
+		<div class="price-one_bg" style="background-image:url(assets/images/background/price-bg.png)"></div>
+		<div class="auto-container">
+			<div class="inner-container">
+				<!-- Sec Title -->
+				<div class="sec-title title-anim centered">
+					<div class="sec-title_title">Pricing</div>
+					<h2 class="sec-title_heading">Founding pricing for <span>launch</span></h2>
+					<div class="sec-title_text">Prices may change after launch. Founding members keep their rate.</div>
+				</div>
+				<div class="pricing-tabs tabs-box">
+					<!--Tabs Container-->
+					<div class="tabs-content">
+						<!-- Tab -->
+						<div class="tab active-tab" id="prod-monthly">
+							<div class="content">
+								<div class="row clearfix">
+
+									<!-- Price Block One -->
+									<div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+										<div class="price-block_one-inner">
+											<div class="price-block_one-title">Starter</div>
+											<div class="price-block_one-subtitle">Best for getting consistent</div>
+											<div class="price-block_one-content">
+												<div class="d-flex justify-content-between align-items-end flex-wrap">
+													<div class="price-block_one-price">GBP 9.99<sub>/mo</sub></div>
+													<div class="price-block_one-text">Founding monthly</div>
+												</div>
+												<div class="price-block_one-button">
+													<a class="template-btn price-one_button" href="#get-started">Choose Starter</a>
+												</div>
+												<ul class="price-block_one-list">
+													<li><i class="fa-solid fa-check fa-fw"></i>Full on-demand workout library</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Beginner-friendly programmes</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Weekly scheduling guidance</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<!-- Price Block One -->
+									<div class="price-block_one active col-lg-4 col-md-6 col-sm-12">
+										<div class="price-block_one-inner">
+											<div class="price-one_stars" style="background-image:url(assets/images/icons/price-stars.png)"></div>
+											<div class="price-block_one-title">Progress</div>
+											<div class="price-block_one-subtitle">Best for structured progression</div>
+											<div class="price-block_one-content">
+												<div class="d-flex justify-content-between align-items-end flex-wrap">
+													<div class="price-block_one-price">GBP 14.99<sub>/mo</sub></div>
+													<div class="price-block_one-text">Most popular</div>
+												</div>
+												<div class="price-block_one-button">
+													<a class="template-btn price-one_button" href="#get-started">Choose Progress</a>
+												</div>
+												<ul class="price-block_one-list">
+													<li><i class="fa-solid fa-check fa-fw"></i>Everything in Starter</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Strength, mobility, conditioning tracks</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Progress tracking (check-ins, streaks)</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<!-- Price Block One -->
+									<div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+										<div class="price-block_one-inner">
+											<div class="price-block_one-title">Coach</div>
+											<div class="price-block_one-subtitle">Best for deeper support</div>
+											<div class="price-block_one-content">
+												<div class="d-flex justify-content-between align-items-end flex-wrap">
+													<div class="price-block_one-price">GBP 24.99<sub>/mo</sub></div>
+													<div class="price-block_one-text">Extra guidance</div>
+												</div>
+												<div class="price-block_one-button">
+													<a class="template-btn price-one_button" href="#get-started">Choose Coach</a>
+												</div>
+												<ul class="price-block_one-list">
+													<li><i class="fa-solid fa-check fa-fw"></i>Everything in Progress</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Personalised plan inputs</li>
+													<li><i class="fa-solid fa-check fa-fw"></i>Priority support channel</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Price One -->
+
+	<!-- Faq One -->
+	<section class="faq-one" id="faq">
+		<div class="faq-one_bg" style="background-image:url(assets/images/background/faq-bg.png)"></div>
+		<div class="faq-one_icon" style="background-image:url(assets/images/icons/step.png)"></div>
+		<div class="auto-container">
+			<div class="row clearfix">
+
+				<!-- Tab Column -->
+				<div class="faq-one_title-column col-lg-5 col-md-12 col-sm-12">
+					<div class="faq-one_title-outer">
+						<!-- Sec Title -->
+						<div class="sec-title title-anim">
+							<div class="sec-title_title">FAQ</div>
+							<h2 class="sec-title_heading">Frequently asked <span>questions</span></h2>
+							<div class="sec-title_text">Clear answers, no fluff. If you have more questions, reach out anytime.</div>
+						</div>
+						<div class="faq-one_button">
+							<a href="#get-started" class="template-btn btn-style-one">
+								<span class="btn-wrap">
+									<span class="text-one">Get started</span>
+									<span class="text-two">Get started</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Accordian Column -->
+				<div class="faq-one_accordian-column col-lg-7 col-md-12 col-sm-12">
+					<div class="faq-one_accordian-outer">
+
+						<!-- Accordion Box -->
+						<ul class="accordion-box_two">
+									
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>Is VESSL for beginners?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">Yes. The system starts simple, then layers progression as you build confidence.</div>
+									</div>
+								</div>
+							</li>
+									
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>What equipment do I need?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">A pair of dumbbells or kettlebells is enough to start. Bodyweight options are included.</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>Can I train around an old injury?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">VESSL is mobility-first with scalable options. Always follow your clinician's advice.</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>How long are sessions?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">Most sessions run 30-45 minutes with clear pacing so you can stay consistent.</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>Can I cancel anytime?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">Yes. No long contracts. Founding pricing is yours for as long as you stay.</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- Block -->
+							<li class="accordion block">
+								<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div>When do I get access?</div>
+								<div class="acc-content">
+									<div class="content">
+										<div class="text">Launching soon. Drop your email and we will send early access first.</div>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Faq One -->
+
+	<!-- CTA One -->
+	<section class="cta-one" id="get-started">
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="row clearfix">
+					<!-- Column -->
+					<div class="cta-one_title-column col-lg-6 col-md-12 col-sm-12">
+						<div class="cta-one_title-outer">
+							<h2 class="cta-one_title">Be the first to train with <span>VESSL.</span></h2>
+							<div class="cta-one_button">
+								<a href="#pricing" class="template-btn btn-style-three">
+									<span class="btn-wrap">
+										<span class="text-one">Choose your plan</span>
+										<span class="text-two">Choose your plan</span>
+									</span>
+								</a>
+							</div>
+						<div class="sec-title_text">Launching soon. Founding members keep founding pricing.</div>
+						</div>
+					</div>
+					<!-- Column -->
+					<div class="cta-one_image-column col-lg-6 col-md-12 col-sm-12">
+						<div class="cta-one_image-outer">
+							<div class="image">
+								<img src="assets/images/resource/cta.png" alt="Training preview" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End CTA One -->
+
+	<!-- Main Footer -->
+	<footer class="main-footer">
+		<div class="footer_pattern" style="background-image: url(assets/images/background/footer-pattern.png)"></div>
+		<div class="auto-container">
+			<div class="inner-container">
+				<!-- Widgets Section -->
+				<div class="widgets-section">
+					<div class="row clearfix">
+						
+						<!-- Big Column -->
+						<div class="big-column col-lg-5 col-md-12 col-sm-12">
+							<div class="footer-newsletter">
+								<h5 class="footer-title">Get early access</h5>
+								<div class="footer-newsletter_text">Drop your email to be first in line for launch access and founding pricing.</div>
+								<div class="newsletter-box">
+									<form method="post" action="#get-started">
+										<div class="form-group">
+											<span class="icon fa-regular fa-envelope fa-fw"></span>
+											<input type="email" name="email" value="" placeholder="Enter your email" required>
+											<button type="submit" class="template-btn btn-style-one">
+												<span class="btn-wrap">
+													<span class="text-one">Join waitlist</span>
+													<span class="text-two">Join waitlist</span>
+												</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<!-- Big Column -->
+						<div class="big-column col-lg-7 col-md-12 col-sm-12">
+							<div class="footer-lists_outer">
+								<div class="row clearfix">
+									<!-- Column -->
+									<div class="column col-lg-5 col-md-4 col-sm-6">
+										<h5 class="footer-title">Programmes</h5>
+										<ul class="footer-pages_list">
+											<li><a href="#pillars">Strength foundations</a></li>
+											<li><a href="#pillars">Mobility power</a></li>
+											<li><a href="#pillars">Conditioning flow</a></li>
+											<li><a href="#how">How it works</a></li>
+											<li><a href="#pricing">Pricing</a></li>
+										</ul>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-3 col-md-4 col-sm-6">
+										<h5 class="footer-title">Company</h5>
+										<ul class="footer-pages_list">
+											<li><a href="#method">The VESSL method</a></li>
+											<li><a href="#faq">FAQs</a></li>
+											<li><a href="#get-started">Contact</a></li>
+										</ul>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-6">
+										<h5 class="footer-title">Support</h5>
+										<ul class="footer-pages_list">
+											<li><a href="#get-started">Join the waitlist</a></li>
+											<li><a href="#pricing">Founding pricing</a></li>
+											<li><a href="#home">Strength in Motion</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="auto-container">
+				<div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
+					<div class="footer-logo"><a href="#home"><img src="assets/images/logo.svg" alt="VESSL" title="VESSL"></a></div>
+					<div class="footer-copyright">&copy; 2026 <a href="#home">VESSL</a>. All rights reserved.</div>
+					<!-- Social Box -->
+					<div class="footer-social_box">
+						<a href="https://instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://youtube.com/" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+						<a href="https://facebook.com/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+</div>
+<!-- End PageWrapper -->
+
+<div class="progress-wrap">
+	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+	</svg>
+</div>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/tilt.jquery.min.js"></script>
+<script src="assets/js/jquery.paroller.min.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/backtotop.js"></script>
+<script src="assets/js/odometer.js"></script>
+<script src="assets/js/parallax-scroll.js"></script>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/SplitText.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/ScrollToPlugin.min.js"></script>
+<script src="assets/js/ScrollSmoother.min.js"></script>
+
+<script src="assets/js/touchspin.js"></script>
+<script src="assets/js/jquery.marquee.min.js"></script>
+<script src="assets/js/magnific-popup.min.js"></script>
+<script src="assets/js/nav-tool.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/element-in-view.js"></script>
+<script src="assets/js/script.js"></script>
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
 </html>

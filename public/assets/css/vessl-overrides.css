@@ -1,0 +1,288 @@
+/* VESSL overrides to align template accents with brand palette. */
+.slider-one_pattern,
+.slider-one_pattern-two,
+.slider-one_pattern-three,
+.slider-one_pattern-four,
+.slider-one_icon,
+.slider-one_icon-two,
+.about-one_pattern,
+.about-one_tab-shadow,
+.answer-one_pattern,
+.steps-one_bg,
+.steps-one_icon,
+.price-one_bg,
+.faq-one_bg,
+.faq-one_icon,
+.footer_pattern,
+.price-one_stars,
+.cta-icon_one,
+.cta-icon_two {
+	filter: hue-rotate(150deg) saturate(0.7);
+}
+
+.cta-one_card img,
+.cta-one_cards img {
+	filter: hue-rotate(150deg) saturate(0.7);
+}
+
+/* Compact header to avoid hero overlap. */
+.header-style-one{
+	min-height: 78px;
+}
+
+.main-header .header-lower .logo-box .logo{
+	padding: 16px 0;
+}
+
+.main-header.fixed-header .header-lower .logo-box .logo{
+	padding: 12px 0;
+}
+
+.main-header .header-lower .logo-box .logo img{
+	max-height: 50px;
+	width: auto;
+}
+
+.main-header_buttons .template-btn{
+	padding: 10px 20px;
+	font-size: 14px;
+}
+
+.main-header .main-menu .navigation > li > a{
+	padding: 14px 0;
+	font-size: 14px;
+}
+
+/* Static hero layout (no carousel). */
+.slider-one_static{
+	position: relative;
+	overflow: hidden;
+	padding: 150px 0 160px;
+}
+
+.slider-one_static .slider-one_title,
+.slider-one_static .slider-one_heading,
+.slider-one_static .slider-one_text,
+.slider-one_static .slider-one_button,
+.slider-one_static .slider-one_image{
+	clip-path: none;
+	transition: none;
+}
+
+.slider-one_content-inner{
+	padding-top: 30px;
+}
+
+/* Keep the Steps heading from overlapping the cards. */
+.steps-one .sec-title_heading{
+	max-width: 360px;
+}
+
+/* Keep pricing amounts on one line for uniform cards. */
+.price-block_one-price{
+	font-size: 54px;
+	white-space: nowrap;
+}
+
+.price-block_one-price sup,
+.price-block_one-price sub{
+	font-size: 22px;
+}
+
+/* Footer logo sizing. */
+.footer-logo img{
+	max-height: 35px;
+	width: auto;
+}
+
+/* Header menu: remove pill box and increase spacing. */
+.main-header.header-style-one .header-lower .main-menu .navigation{
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+}
+
+.main-header .main-menu .navigation > li{
+	margin-right: 36px;
+}
+
+.main-header .main-menu .navigation > li:last-child{
+	margin-right: 0;
+}
+
+/* Premium hover glow + subtle lift on key cards. */
+.service-block_one-inner,
+.step-block_one-inner,
+.price-block_one-inner,
+.testimonial-block_one-inner,
+.news-block_one-inner,
+.faq-one_accordian-outer,
+.answer-one_content-outer,
+.about-one_tab-outer{
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+	.service-block_one-inner:hover,
+	.step-block_one-inner:hover,
+	.price-block_one-inner:hover,
+	.testimonial-block_one-inner:hover,
+	.news-block_one-inner:hover,
+	.faq-one_accordian-outer:hover,
+	.answer-one_content-outer:hover,
+	.about-one_tab-outer:hover{
+		transform: translateY(-6px) scale(1.01);
+		box-shadow:
+			0 26px 60px rgba(0,0,0,0.45),
+			0 18px 42px rgba(var(--main-color-rgb), 0.25);
+		border-color: rgba(var(--main-color-rgb), 0.45);
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	.service-block_one-inner,
+	.step-block_one-inner,
+	.price-block_one-inner,
+	.testimonial-block_one-inner,
+	.news-block_one-inner,
+	.faq-one_accordian-outer,
+	.answer-one_content-outer,
+	.about-one_tab-outer{
+		transition: none;
+	}
+
+	.service-block_one-inner:hover,
+	.step-block_one-inner:hover,
+	.price-block_one-inner:hover,
+	.testimonial-block_one-inner:hover,
+	.news-block_one-inner:hover,
+	.faq-one_accordian-outer:hover,
+	.answer-one_content-outer:hover,
+	.about-one_tab-outer:hover{
+		transform: none;
+		box-shadow: none;
+	}
+}
+
+/* Prevent FAQ/CTA overlap by removing the CTA negative offset. */
+.faq-one{
+	padding-bottom: 110px;
+}
+
+.cta-one{
+	padding-top: 60px;
+}
+
+.cta-one .inner-container{
+	margin-top: 0;
+}
+
+.cta-one .inner-container::before{
+	top: 0;
+}
+
+.cta-one_title-outer{
+	padding-top: 70px;
+}
+
+.cta-one_image-outer{
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+
+/* Global background: flagship black + teal pulse + subtle particles. */
+body{
+	background-color: #1d1d1d;
+}
+
+body::before{
+	content: '';
+	position: fixed;
+	inset: -20%;
+	background:
+		radial-gradient(600px 420px at 15% 20%, rgba(76, 165, 165, 0.22), transparent 60%),
+		radial-gradient(520px 420px at 80% 10%, rgba(152, 218, 216, 0.18), transparent 65%),
+		radial-gradient(700px 520px at 50% 80%, rgba(44, 57, 58, 0.45), transparent 70%);
+	filter: blur(40px);
+	opacity: 0.9;
+	z-index: -2;
+	animation: vesslGlowShift 18s ease-in-out infinite;
+}
+
+body::after{
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image: radial-gradient(rgba(232, 234, 232, 0.06) 1px, transparent 0);
+	background-size: 140px 140px;
+	opacity: 0.35;
+	z-index: -3;
+	animation: vesslParticleDrift 30s linear infinite;
+}
+
+@keyframes vesslGlowShift{
+	0%{
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50%{
+		transform: translate3d(2%, -2%, 0) scale(1.04);
+	}
+	100%{
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@keyframes vesslParticleDrift{
+	0%{
+		background-position: 0 0;
+	}
+	100%{
+		background-position: 140px 140px;
+	}
+}
+
+/* Remove peanut-style background graphics. */
+.slider-one_pattern,
+.slider-one_pattern-two,
+.slider-one_pattern-three,
+.slider-one_pattern-four,
+.about-one_pattern,
+.about-one_tab-shadow,
+.answer-one_pattern,
+.steps-one_bg,
+.faq-one_bg,
+.price-one_bg,
+.footer_pattern{
+	background-image: none !important;
+}
+
+.steps-one_icon,
+.faq-one_icon{
+	display: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+	body::before,
+	body::after{
+		animation: none;
+	}
+}
+
+@media (max-width: 991px){
+	.main-header .header-lower .logo-box .logo img{
+		max-height: 43px;
+	}
+
+	.main-header_buttons .template-btn{
+		padding: 9px 16px;
+		font-size: 13px;
+	}
+
+	.slider-one_static{
+		padding: 90px 0 140px;
+	}
+
+	.steps-one .sec-title_heading{
+		max-width: none;
+	}
+}
