@@ -6,13 +6,19 @@
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if ($('.loader-wrap').length) {
-			$('.loader-wrap').delay(1300).fadeOut(300);
+			$('.loader-wrap').delay(1300).fadeOut(300, function () {
+				$('body').addClass('vessl-loaded');
+			});
+		} else {
+			$('body').addClass('vessl-loaded');
 		}
 	}
 
 	if ($('.preloader-close').length) {
 		$('.preloader-close').on('click', function () {
-			$('.loader-wrap').delay(1300).fadeOut(300);
+			$('.loader-wrap').delay(1300).fadeOut(300, function () {
+				$('body').addClass('vessl-loaded');
+			});
 		})
 	}
 	

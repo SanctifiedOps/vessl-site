@@ -73,6 +73,78 @@
 	padding-top: 30px;
 }
 
+/* Match hero text spacing below the button row. */
+.slider-one_button + .slider-one_text{
+	margin-top: 24px;
+}
+
+/* Premium hero entrance animation. */
+body.vessl-loaded .slider-one_content-inner{
+	animation: vesslHeroContentIn 0.95s ease-out both;
+}
+
+body.vessl-loaded .slider-one_content-inner > *{
+	animation: vesslHeroItemIn 0.8s ease-out both;
+}
+
+body.vessl-loaded .slider-one_content-inner > :nth-child(1){ animation-delay: 0.05s; }
+body.vessl-loaded .slider-one_content-inner > :nth-child(2){ animation-delay: 0.12s; }
+body.vessl-loaded .slider-one_content-inner > :nth-child(3){ animation-delay: 0.2s; }
+body.vessl-loaded .slider-one_content-inner > :nth-child(4){ animation-delay: 0.28s; }
+body.vessl-loaded .slider-one_content-inner > :nth-child(5){ animation-delay: 0.36s; }
+body.vessl-loaded .slider-one_content-inner > :nth-child(6){ animation-delay: 0.44s; }
+
+body.vessl-loaded .slider-one_image-outer{
+	animation: vesslHeroVisualIn 1.05s ease-out both;
+	animation-delay: 0.18s;
+}
+
+@keyframes vesslHeroContentIn{
+	from{
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes vesslHeroItemIn{
+	from{
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes vesslHeroVisualIn{
+	from{
+		opacity: 0;
+		transform: translateY(24px) scale(0.98);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Keep the hero graph card visible on load. */
+.slider-one_graph{
+	bottom: 0;
+	transform: translateY(-160px) scale(0.75);
+	transform-origin: bottom left;
+	transition: transform 0.3s ease;
+}
+
+.slider-one_graph:hover{
+	transform: translateY(-160px) scale(0.78);
+}
+
+
 /* Keep the Steps heading from overlapping the cards. */
 .steps-one .sec-title_heading{
 	max-width: 360px;
@@ -264,6 +336,12 @@ body::after{
 @media (prefers-reduced-motion: reduce){
 	body::before,
 	body::after{
+		animation: none;
+	}
+
+	body.vessl-loaded .slider-one_content-inner,
+	body.vessl-loaded .slider-one_content-inner > *,
+	body.vessl-loaded .slider-one_image-outer{
 		animation: none;
 	}
 }
