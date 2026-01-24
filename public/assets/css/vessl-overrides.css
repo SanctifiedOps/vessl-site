@@ -150,15 +150,19 @@ body.vessl-loaded .slider-one_image-outer{
 	max-width: 360px;
 }
 
-/* Keep pricing amounts on one line for uniform cards. */
+/* Refined pricing typography - cleaner hierarchy */
 .price-block_one-price{
-	font-size: 54px;
-	white-space: nowrap;
+	font-size: 42px;
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: -0.02em;
 }
 
-.price-block_one-price sup,
 .price-block_one-price sub{
-	font-size: 22px;
+	font-size: 16px;
+	font-weight: 500;
+	opacity: 0.7;
+	margin-left: 2px;
 }
 
 /* Footer logo sizing. */
@@ -362,5 +366,292 @@ body::after{
 
 	.steps-one .sec-title_heading{
 		max-width: none;
+	}
+}
+
+/* Strikethrough original price styling - stacked above main price */
+.price-original{
+	display: block;
+	text-decoration: line-through;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 6px;
+	letter-spacing: 0;
+}
+
+/* Active card (Premium) - ensure strikethrough is visible */
+.price-block_one.active .price-original{
+	color: rgba(255, 255, 255, 0.6);
+}
+
+/* Non-active cards - darker strikethrough for better contrast */
+.price-block_one:not(.active) .price-original{
+	color: rgba(255, 255, 255, 0.4);
+}
+
+/* Price row layout - stacked price display */
+.price-block_one-price-row{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+
+.price-block_one-price{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.price-current{
+	display: block;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+/* Adjust pricing card for longer feature lists */
+.price-block_one-list li{
+	font-size: 14px;
+	line-height: 1.5;
+	padding: 6px 0;
+}
+
+/* Uniform card heights with flex */
+.price-block_one-inner{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.price-block_one-content{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.price-block_one-list{
+	flex: 1;
+}
+
+.price-block_one-button{
+	margin-top: auto;
+}
+
+/* Mobile preloader text fix - prevent text cutoff */
+@media (max-width: 767px){
+	.animation-preloader .txt-loading{
+		font-size: 30px !important;
+		letter-spacing: 2px;
+	}
+
+	.animation-preloader .txt-loading .letters-loading{
+		font-size: 30px !important;
+	}
+}
+
+@media (max-width: 480px){
+	.animation-preloader .txt-loading{
+		font-size: 22px !important;
+		letter-spacing: 1px;
+	}
+
+	.animation-preloader .txt-loading .letters-loading{
+		font-size: 22px !important;
+	}
+}
+
+/* Additional mobile pricing card fixes */
+@media (max-width: 767px){
+	.price-block_one-price{
+		font-size: 28px;
+	}
+
+	.price-original{
+		font-size: 13px;
+	}
+
+	.price-block_one-list li{
+		font-size: 13px;
+		padding: 5px 0;
+	}
+
+	.price-block_one-subtitle{
+		font-size: 13px;
+	}
+
+	.price-block_one-price-row{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.price-block_one-text{
+		margin-top: 8px;
+	}
+}
+
+/* Ensure longer text in sections wraps properly on mobile */
+@media (max-width: 599px){
+	.service-block_one-text{
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	.answer-one_list li{
+		font-size: 14px;
+		line-height: 1.5;
+		margin-bottom: 10px;
+	}
+
+	.counter-block_one-text{
+		font-size: 14px;
+		line-height: 1.5;
+	}
+}
+
+/* ============================================
+   DESIGN REFINEMENTS - Enhanced Polish
+   ============================================ */
+
+/* Pricing card title refinement */
+.price-block_one-title{
+	font-size: 26px;
+	letter-spacing: -0.01em;
+	margin-bottom: 4px;
+}
+
+/* Pricing subtitle - more refined */
+.price-block_one-subtitle{
+	font-size: 14px;
+	opacity: 0.75;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+}
+
+/* Feature list checkmarks - tighter spacing */
+.price-block_one-list{
+	margin-top: 28px;
+}
+
+.price-block_one-list li{
+	margin-bottom: 12px;
+	align-items: flex-start;
+}
+
+.price-block_one-list li i{
+	margin-top: 3px;
+	font-size: 13px;
+}
+
+/* CTA buttons in pricing - refined */
+.price-one_button{
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	padding: 16px 10px;
+	transition: all 0.25s ease;
+}
+
+/* Section header refinements */
+.sec-title_heading{
+	letter-spacing: -0.02em;
+}
+
+.sec-title_text{
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.6;
+}
+
+/* Service blocks (pillars) - uniform card heights */
+.services-one .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.service-block_one{
+	display: flex;
+}
+
+.service-block_one-inner{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.service-block_one-text{
+	flex: 1;
+}
+
+/* Service blocks (pillars) - better text sizing */
+.service-block_one-heading a{
+	font-size: 22px;
+	letter-spacing: -0.01em;
+}
+
+.service-block_one-text{
+	font-size: 15px;
+	line-height: 1.55;
+	opacity: 0.85;
+}
+
+/* Step blocks - refined text */
+.step-block_one-title{
+	font-size: 20px;
+	letter-spacing: -0.01em;
+}
+
+.step-block_one-text{
+	font-size: 15px;
+	line-height: 1.55;
+	opacity: 0.85;
+}
+
+/* FAQ accordion - better readability */
+.accordion-box_two .block .acc-btn{
+	font-size: 17px;
+	letter-spacing: -0.01em;
+}
+
+.accordion-box_two .block .content .text{
+	font-size: 15px;
+	line-height: 1.65;
+	opacity: 0.9;
+}
+
+/* Answer section list - tighter */
+.answer-one_list li{
+	font-size: 15px;
+	line-height: 1.5;
+	margin-bottom: 14px;
+}
+
+/* Counter blocks - refined */
+.counter-block_one-text{
+	font-size: 15px;
+	line-height: 1.5;
+	opacity: 0.85;
+}
+
+/* Tablet pricing adjustments */
+@media (max-width: 1140px){
+	.price-block_one-price{
+		font-size: 36px;
+	}
+
+	.price-block_one-title{
+		font-size: 22px;
+	}
+}
+
+/* Small tablet */
+@media (max-width: 991px){
+	.price-block_one-price{
+		font-size: 34px;
 	}
 }
