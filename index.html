@@ -928,17 +928,19 @@
 						<!-- Big Column -->
 						<div class="big-column col-lg-5 col-md-12 col-sm-12">
 							<div class="footer-newsletter">
-								<h5 class="footer-title">Get early access</h5>
-								<div class="footer-newsletter_text">Sign up now to lock in introductory pricing and join the VESSL community!</div>
+								<h5 class="footer-title">Join the Community</h5>
+								<div class="footer-newsletter_text">Subscribe for training tips, wellness insights, and all things VESSL delivered to your inbox.</div>
 								<div class="newsletter-box">
-									<form method="post" action="#get-started">
+									<form name="community-subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+										<input type="hidden" name="form-name" value="community-subscribe">
+										<input type="hidden" name="bot-field">
 										<div class="form-group">
 											<span class="icon fa-regular fa-envelope fa-fw"></span>
 											<input type="email" name="email" value="" placeholder="Enter your email" required>
 											<button type="submit" class="template-btn btn-style-one">
 												<span class="btn-wrap">
-													<span class="text-one">Join waitlist</span>
-													<span class="text-two">Join waitlist</span>
+													<span class="text-one">Subscribe</span>
+													<span class="text-two">Subscribe</span>
 												</span>
 											</button>
 										</div>
