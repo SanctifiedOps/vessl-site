@@ -790,6 +790,7 @@ body::after{
 .team-two{
 	position: relative;
 	padding: 100px 0;
+	margin-bottom: 60px;
 	background: #141414;
 }
 
