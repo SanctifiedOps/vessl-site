@@ -165,10 +165,16 @@ body.vessl-loaded .slider-one_image-outer{
 	margin-left: 2px;
 }
 
-/* Footer logo sizing. */
+/* Footer logo sizing - increased by 100% */
 .footer-logo img{
-	max-height: 35px;
+	max-height: 70px;
 	width: auto;
+}
+
+/* Header logo sizing - increased by 25% */
+.main-header .logo-box .logo img{
+	transform: scale(1.25);
+	transform-origin: left center;
 }
 
 /* Header menu: remove pill box and increase spacing. */
@@ -441,26 +447,60 @@ body::after{
 	margin-top: auto;
 }
 
-/* Mobile preloader text fix - prevent text cutoff */
+/* Mobile break - hidden on desktop */
+.mobile-break{
+	display: none;
+}
+
+/* Mobile preloader text fix - two lines with padding */
 @media (max-width: 767px){
 	.animation-preloader .txt-loading{
-		font-size: 30px !important;
-		letter-spacing: 2px;
+		font-size: 32px !important;
+		letter-spacing: 4px;
+		text-align: center;
+		padding: 0 30px;
 	}
 
 	.animation-preloader .txt-loading .letters-loading{
-		font-size: 30px !important;
+		font-size: 32px !important;
+	}
+
+	.mobile-break{
+		display: block;
+		width: 100%;
+		height: 15px;
 	}
 }
 
 @media (max-width: 480px){
 	.animation-preloader .txt-loading{
-		font-size: 22px !important;
-		letter-spacing: 1px;
+		font-size: 28px !important;
+		letter-spacing: 3px;
+		padding: 0 25px;
 	}
 
 	.animation-preloader .txt-loading .letters-loading{
-		font-size: 22px !important;
+		font-size: 28px !important;
+	}
+
+	.mobile-break{
+		height: 12px;
+	}
+}
+
+@media (max-width: 360px){
+	.animation-preloader .txt-loading{
+		font-size: 24px !important;
+		letter-spacing: 2px;
+		padding: 0 20px;
+	}
+
+	.animation-preloader .txt-loading .letters-loading{
+		font-size: 24px !important;
+	}
+
+	.mobile-break{
+		height: 10px;
 	}
 }
 
@@ -653,5 +693,296 @@ body::after{
 @media (max-width: 991px){
 	.price-block_one-price{
 		font-size: 34px;
+	}
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonial-four{
+	position: relative;
+	padding: 100px 0;
+	background: #1a1a1a;
+}
+
+/* Testimonials row - uniform heights with flexbox (matches services-one pattern) */
+.testimonial-four .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.testimonial-block_one{
+	position: relative;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.testimonial-block_one-inner{
+	position: relative;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 16px;
+	padding: 32px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s ease;
+}
+
+.testimonial-block_one-inner:hover{
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(91, 193, 186, 0.3);
+}
+
+.testimonial-block_one-rating{
+	margin-bottom: 20px;
+}
+
+.testimonial-block_one-rating .fa-star{
+	color: #5bc1ba;
+	font-size: 14px;
+	margin-right: 3px;
+}
+
+.testimonial-block_one-text{
+	font-size: 15px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.85);
+	flex: 1;
+	margin-bottom: 24px;
+}
+
+.testimonial-block_one-author_box{
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-block_one-author_box strong{
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.testimonial-block_one-author_box span{
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+/* Testimonials mobile */
+@media (max-width: 767px){
+	.testimonial-four{
+		padding: 60px 0;
+	}
+
+	.testimonial-block_one-inner{
+		padding: 24px;
+	}
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+
+.team-two{
+	position: relative;
+	padding: 100px 0;
+	background: #141414;
+}
+
+/* Team row - uniform heights with flexbox (matches services-one pattern) */
+.team-two .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.team-block_one{
+	position: relative;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.team-block_one-inner{
+	position: relative;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 16px;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s ease;
+}
+
+.team-block_one-inner:hover{
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(91, 193, 186, 0.3);
+}
+
+.team-block_one-image{
+	position: relative;
+	width: 100%;
+	height: 320px;
+	overflow: hidden;
+}
+
+.team-block_one-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+	transition: transform 0.4s ease;
+}
+
+.team-block_one-inner:hover .team-block_one-image img{
+	transform: scale(1.05);
+}
+
+.team-block_one-content{
+	position: relative;
+	padding: 28px 24px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.team-block_one-title{
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 8px;
+	letter-spacing: -0.01em;
+}
+
+.team-block_one-designation{
+	font-size: 11px;
+	color: #5bc1ba;
+	font-weight: 600;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.team-block_one-credentials{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.team-block_one-credentials li{
+	font-size: 14px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.7);
+	padding: 0;
+	margin-bottom: 4px;
+}
+
+/* Mobile adjustments for team section */
+@media (max-width: 767px){
+	.team-two{
+		padding: 60px 0;
+	}
+
+	.team-block_one-image{
+		height: 350px;
+	}
+
+	.team-block_one-content{
+		padding: 24px 20px;
+	}
+
+	.team-block_one-title{
+		font-size: 22px;
+	}
+
+	.team-block_one-designation{
+		font-size: 11px;
+		margin-bottom: 16px;
+	}
+
+	.team-block_one-credentials li{
+		font-size: 13px;
+	}
+}
+
+/* ============================================
+   INSTAGRAM SECTION
+   ============================================ */
+
+.instagram-section{
+	position: relative;
+	padding: 100px 0;
+	background: #1a1a1a;
+}
+
+.instagram-feed-container{
+	margin-top: 50px;
+	text-align: center;
+}
+
+/* Hide fallback CTA when Elfsight widget is active */
+.instagram-feed-container .elfsight-app-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:not(:empty) + .instagram-cta{
+	display: none;
+}
+
+.instagram-cta{
+	padding: 60px 20px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 16px;
+}
+
+.instagram-follow-btn{
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 40px;
+	background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 50px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.instagram-follow-btn:hover{
+	transform: translateY(-3px);
+	box-shadow: 0 15px 40px rgba(131, 58, 180, 0.4);
+	color: #fff;
+}
+
+.instagram-follow-btn i{
+	font-size: 24px;
+}
+
+/* Mobile adjustments for Instagram section */
+@media (max-width: 767px){
+	.instagram-section{
+		padding: 60px 0;
+	}
+
+	.instagram-feed-container{
+		margin-top: 30px;
+	}
+
+	.instagram-cta{
+		padding: 40px 15px;
+	}
+
+	.instagram-follow-btn{
+		padding: 16px 30px;
+		font-size: 16px;
+	}
+
+	.instagram-follow-btn i{
+		font-size: 20px;
 	}
 }
