@@ -930,6 +930,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<form name="community-subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 										<input type="hidden" name="form-name" value="community-subscribe">
 										<input type="hidden" name="bot-field">
+										<input type="hidden" name="utm_source" value="">
+										<input type="hidden" name="utm_campaign" value="">
+										<input type="hidden" name="utm_medium" value="">
+										<input type="hidden" name="utm_term" value="">
+										<input type="hidden" name="utm_content" value="">
 										<div class="form-group">
 											<span class="icon fa-regular fa-envelope fa-fw"></span>
 											<input type="email" name="email" value="" placeholder="Enter your email" required>
@@ -1038,6 +1043,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="assets/js/jquery-ui.js"></script>
 <script src="assets/js/element-in-view.js"></script>
 <script src="assets/js/script.js"></script>
+
+<!-- UTM Parameter Tracking -->
+<script>
+(function(){
+	var params = new URLSearchParams(window.location.search);
+	var utmKeys = ['utm_source','utm_campaign','utm_medium','utm_term','utm_content'];
+	utmKeys.forEach(function(key){
+		var val = params.get(key);
+		if(val){
+			sessionStorage.setItem(key, val);
+		}
+	});
+	utmKeys.forEach(function(key){
+		var stored = sessionStorage.getItem(key);
+		if(stored){
+			var fields = document.querySelectorAll('input[name="'+key+'"]');
+			fields.forEach(function(field){ field.value = stored; });
+		}
+	});
+})();
+</script>
 
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
