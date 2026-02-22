@@ -53,11 +53,20 @@
 	font-size: 14px;
 }
 
+/* Remove decorative clip-path bar between hero and next section */
+.slider-one{
+	margin-bottom: -1px;
+}
+
+.slider-one::before{
+	display: none;
+}
+
 /* Static hero layout (no carousel). */
 .slider-one_static{
 	position: relative;
 	overflow: hidden;
-	padding: 150px 0 160px;
+	padding: 150px 0 120px;
 }
 
 .slider-one_static .slider-one_title,
@@ -367,7 +376,7 @@ body::after{
 	}
 
 	.slider-one_static{
-		padding: 90px 0 140px;
+		padding: 90px 0 105px;
 	}
 
 	.steps-one .sec-title_heading{
@@ -910,6 +919,197 @@ body::after{
 
 	.team-block_one-credentials li{
 		font-size: 13px;
+	}
+}
+
+/* ============================================
+   FREE TRIAL CTA SECTION
+   ============================================ */
+
+.free-trial-cta{
+	position: relative;
+	padding: 80px 0;
+	background: transparent;
+}
+
+.free-trial-inner{
+	position: relative;
+	background: linear-gradient(135deg, rgba(91, 193, 186, 0.08) 0%, rgba(91, 193, 186, 0.02) 100%);
+	border: 1px solid rgba(91, 193, 186, 0.2);
+	border-radius: 20px;
+	padding: 60px;
+	overflow: hidden;
+}
+
+.free-trial-inner::before{
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 500px;
+	height: 500px;
+	background: radial-gradient(circle, rgba(91, 193, 186, 0.08) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+.free-trial-badge{
+	display: inline-block;
+	padding: 6px 16px;
+	background: rgba(91, 193, 186, 0.15);
+	border: 1px solid rgba(91, 193, 186, 0.3);
+	border-radius: 50px;
+	color: #5bc1ba;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	margin-bottom: 24px;
+}
+
+.free-trial-title{
+	font-size: 42px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.15;
+	margin-bottom: 20px;
+	letter-spacing: -0.02em;
+}
+
+.free-trial-title span{
+	color: #5bc1ba;
+}
+
+.free-trial-text{
+	font-size: 16px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.75);
+	max-width: 500px;
+	margin-bottom: 28px;
+}
+
+.free-trial-features{
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 36px;
+}
+
+.free-trial-feature{
+	font-size: 15px;
+	color: rgba(255, 255, 255, 0.85);
+	font-weight: 500;
+}
+
+.free-trial-feature i{
+	color: #5bc1ba;
+	margin-right: 8px;
+}
+
+.free-trial-buttons .template-btn{
+	font-size: 16px;
+	font-weight: 600;
+	padding: 18px 36px;
+}
+
+/* Free Trial layout - widen text, narrow image column */
+.free-trial-inner .col-lg-7{
+	flex: 0 0 66.666%;
+	max-width: 66.666%;
+}
+
+.free-trial-inner .col-lg-5{
+	flex: 0 0 33.333%;
+	max-width: 33.333%;
+}
+
+/* Free Trial Visual - image overlaps top AND bottom border */
+.free-trial-visual{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	margin-top: -80px;
+	margin-bottom: -80px;
+}
+
+.free-trial-visual img{
+	width: 100%;
+	max-width: 320px;
+	height: auto;
+	border-radius: 16px;
+	filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* Free Trial - allow overflow for image overlap */
+.free-trial-inner{
+	overflow: visible;
+}
+
+/* Kill dead space in text area */
+.free-trial-text{
+	max-width: none;
+}
+
+/* Free Trial mobile */
+@media (max-width: 991px){
+	.free-trial-inner{
+		padding: 40px 30px;
+	}
+
+	.free-trial-title{
+		font-size: 34px;
+	}
+
+	/* Reset column widths on mobile */
+	.free-trial-inner .col-lg-7,
+	.free-trial-inner .col-lg-5{
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	/* Reorder: image column first on mobile */
+	.free-trial-inner .row{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.free-trial-inner .col-lg-5{
+		order: -1;
+	}
+
+	.free-trial-visual{
+		margin-top: -70px;
+		margin-bottom: 30px;
+	}
+
+	.free-trial-visual img{
+		max-width: 220px;
+	}
+}
+
+@media (max-width: 767px){
+	.free-trial-cta{
+		padding: 60px 0;
+	}
+
+	.free-trial-inner{
+		padding: 32px 24px;
+	}
+
+	.free-trial-title{
+		font-size: 28px;
+	}
+
+	.free-trial-text{
+		font-size: 15px;
+	}
+
+	.free-trial-visual{
+		margin-top: -60px;
+		margin-bottom: 24px;
+	}
+
+	.free-trial-visual img{
+		max-width: 200px;
 	}
 }
 
