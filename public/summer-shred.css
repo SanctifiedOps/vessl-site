@@ -431,5 +431,6 @@ a { color: inherit; text-decoration: none; }
   .results-grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; }
   .sticky-cta { display: flex; }
   .nav .btn { display: none; }
+  .hero .eyebrow { display: none; }   /* eyebrow gets lost on mobile — hide it */
   .hero { padding-bottom: 5rem; }
 }
