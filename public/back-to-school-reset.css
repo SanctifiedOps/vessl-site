@@ -1,0 +1,21 @@
+/* Reset campaign photos; shared layout remains in summer-shred.css.
+   Web copies use the matching numbered VESSL-SCHOOL-RESET originals. */
+:root {
+  --img-hero: url("/assets/images/VESSL-School-Reset/reset-2-web.jpg");
+  --img-mindset: url("/assets/images/VESSL-School-Reset/reset-10-web.jpg");
+}
+.hero .backdrop::before { background-position: 62% center; }
+/* Darken the photo behind the hero copy on desktop and mobile. */
+.hero .scrim {
+  background:
+    linear-gradient(180deg, rgba(20,23,23,.58) 0%, rgba(20,23,23,.48) 26%, rgba(20,23,23,.74) 68%, rgba(26,29,29,.97) 100%),
+    linear-gradient(78deg, rgba(20,23,23,.92) 0%, rgba(20,23,23,.62) 44%, rgba(20,23,23,.2) 72%);
+}
+
+.mindset .backdrop::before { background-position: center 35%; }
+@media (max-width: 759px) {
+  .hero .backdrop::before { background-position: 61% center; }
+}
+
+/* Keep the lifter in frame within the tall benefits photo. */
+img[src$="reset-3-web.jpg"] { object-position: 28% center; }
