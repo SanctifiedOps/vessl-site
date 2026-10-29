@@ -1,0 +1,20 @@
+/* Winter Shred photos. Layout and interactions are shared with Summer Shred. */
+:root {
+  --img-hero: url("/assets/images/VESSL-Christmas/hero.jpg");
+  --img-mindset: url("/assets/images/VESSL-Christmas/mindset.jpg");
+}
+.hero .backdrop::before { background-position: 62% 25%; }
+/* Darken the photo behind the hero copy on desktop and mobile. */
+.hero .scrim {
+  background:
+    linear-gradient(180deg, rgba(20,23,23,.58) 0%, rgba(20,23,23,.48) 26%, rgba(20,23,23,.74) 68%, rgba(26,29,29,.97) 100%),
+    linear-gradient(78deg, rgba(20,23,23,.92) 0%, rgba(20,23,23,.62) 44%, rgba(20,23,23,.2) 72%);
+}
+
+.mindset .backdrop::before { background-position: center 35%; }
+@media (max-width: 759px) {
+  .hero .backdrop::before { background-position: 65% center; }
+}
+
+/* Keep the athlete in frame within the tall benefits photo. */
+img[src$="benefits.jpg"] { object-position: 65% center; }

@@ -378,6 +378,8 @@
 
 	//  Animation Fade Left End
 	/////////////////////////////////////////////////////
+	// Animate the legacy cursor only on pages that include it.
+	if (document.querySelector(".cursor") && document.querySelector(".cursor-follower")) {
 	// CURSOR
 	var cursor = $(".cursor"),
 	follower = $(".cursor-follower");
@@ -423,6 +425,7 @@
 		cursor.removeClass("active");
 		follower.removeClass("active");
 	});   
+	}
 	// CURSOR End
 
 

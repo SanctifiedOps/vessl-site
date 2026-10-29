@@ -33,6 +33,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="assets/css/meanmenu.min.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 <link href="assets/css/vessl-overrides.css" rel="stylesheet">
+<link href="assets/css/vessl-home.css" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/images/VESSL-School-Reset/reset-2-web.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
@@ -41,22 +43,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
-<body>
+<body class="vessl-home">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRJSF9V2"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <div class="page-wrapper">
-	
-	<!-- Cursor -->
-	<div class="cursor"></div>
-	<div class="cursor-follower"></div>
-	<!-- Cursor End -->
  	
 	
 	<!-- Main Header -->
@@ -87,6 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
 									<ul class="navigation clearfix">
 										<li><a href="#home">Home</a></li>
+										<li><a href="#programmes">Programmes</a></li>
 										<li><a href="#pillars">Pillars</a></li>
 										<li><a href="#method">Method</a></li>
 										<li><a href="#how">How it works</a></li>
@@ -144,56 +142,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</header>
 	<!-- End Main Header -->
 	
-	<!-- Slider One -->
-	<section class="slider-one" id="home">
-		<div class="slider-one_static">
-					<div class="slider-one_pattern" style="background-image:url(assets/images/main-slider/pattern-1.png)"></div>
-					<div class="slider-one_pattern-two" style="background-image:url(assets/images/main-slider/pattern-2.png)"></div>
-					<div class="slider-one_pattern-four" style="background-image:url(assets/images/main-slider/pattern-4.png)"></div>
-					<div class="auto-container">
-						<div class="row clearfix">
-							<!-- Content Column -->
-							<div class="slider-one_content col-lg-7 col-md-12 col-sm-12">
-								<div class="slider-one_content-inner">
-									<div class="slider-one_title">💪 Strength in Motion</div>
-									<h1 class="slider-one_heading">Structured Training. <span>Real Results</span></h1>
-									<div class="slider-one_text">A movement-first system designed for beginners, busy professionals, and anyone who wants a clear, science-backed plan.</div>
-									<div class="slider-one_button d-flex align-items-center flex-wrap">
-										<a href="#pricing" class="template-btn btn-style-one">
-											<span class="btn-wrap">
-												<span class="text-one">Choose your plan</span>
-												<span class="text-two">Choose your plan</span>
-											</span>
-										</a>
-										<a href="https://www.ptdistinction.com/package_signup?str=1&apk=WM6G8GUGG81899743&pkid=45389" target="_blank" class="template-btn btn-style-two">
-											<span class="btn-wrap">
-												<span class="text-one">Free Trial</span>
-												<span class="text-two">Free Trial</span>
-											</span>
-										</a>
-									</div>
-									<div class="slider-one_text">Find the VESSL plan that fits your training.</div>
-								</div>
-							</div>
-							<!-- Image Column -->
-							<div class="slider-one_image-column col-lg-5 col-md-12 col-sm-12">
-								<div class="slider-one_pattern-three" style="background-image:url(assets/images/main-slider/pattern-3.png)"></div>
-								<div class="slider-one_image-outer">
-									<div class="slider-one_graph">
-										<div class="slider-one_graph-title">Weekly plan <span>12 weeks <sup><i class="fa-solid fa-caret-up fa-fw"></i>progress</sup></span></div>
-										<img src="assets/images/main-slider/graph.png" alt="" />
-									</div>
-									<div class="slider-one_image">
-										<img src="assets/images/vessl-hero.gif" alt="VESSL app preview" />
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-	</section>
-	<!-- End Main Slider Section -->
+	<!-- Photo hero -->
+<section class="home-hero" id="home" aria-labelledby="home-title">
+  <div class="auto-container">
+    <div class="home-hero-copy">
+      <p class="home-eyebrow">Strength in Motion</p>
+      <h1 id="home-title">Structured Training.<span>Real Results</span></h1>
+      <p class="home-hero-intro">A movement-first system designed for beginners, busy professionals, and anyone who wants a clear, science-backed plan.</p>
+      <div class="home-hero-actions">
+        <a class="home-button" href="#programmes">Explore programmes <span aria-hidden="true">&rarr;</span></a>
+        <a class="home-button home-button-outline" href="#pricing">Choose your plan</a>
+      </div>
+      <p class="home-hero-note">Find the VESSL plan that fits your training.</p>
+    </div>
+  </div>
+</section>
+
+
 
 	<!-- Services One -->
 	<section class="services-one" id="pillars">
@@ -291,6 +256,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</div>
 	</section>
+
+<section class="home-programmes" id="programmes" aria-labelledby="programmes-title">
+  <div class="auto-container">
+    <div class="home-programmes-heading">
+      <p class="home-eyebrow">Your next eight weeks</p>
+      <h2 id="programmes-title">Find your <span>programme</span></h2>
+      <p>Structured workouts and simple nutrition guidance in the VESSL app. Choose your programme, pay once and keep it forever.</p>
+    </div>
+    <div class="home-programme-grid">
+      <article class="home-programme-card">
+        <a class="home-programme-image" href="/winter-shred.html" tabindex="-1" aria-hidden="true"><img src="/assets/images/VESSL-Christmas/hero.jpg" alt="" loading="lazy" width="2200" height="1467"></a>
+        <div class="home-programme-body">
+          <p class="home-programme-kicker">8 weeks &middot; Christmas programme</p>
+          <h3>Winter <span>Shred</span></h3>
+          <p>Yule be lean. Build your routine before Christmas and head into 2027 with a plan already under way.</p>
+          <div class="home-programme-price"><strong>&pound;35</strong><span>One payment</span></div>
+          <a class="home-button" href="/winter-shred.html">View Winter Shred <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="home-programme-card">
+        <a class="home-programme-image" href="/back-to-school-reboot.html" tabindex="-1" aria-hidden="true"><img src="/assets/images/VESSL-School-Reset/reset-2-web.jpg" alt="" loading="lazy" width="2200" height="1468"></a>
+        <div class="home-programme-body">
+          <p class="home-programme-kicker">8 weeks &middot; Back to your routine</p>
+          <h3>Back To School <span>Reboot</span></h3>
+          <p>Make time for you with a clear gym plan that fits around work, school runs and family life.</p>
+          <div class="home-programme-price"><strong>&pound;55</strong><span>One payment</span></div>
+          <a class="home-button" href="/back-to-school-reboot.html">View School Reboot <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="home-programme-card">
+        <a class="home-programme-image" href="/summer-shred.html" tabindex="-1" aria-hidden="true"><img src="/assets/images/summer-shred/three-young-people-running-together-in-a-race-on-a-2026-01-11-08-48-39-utc.jpg" alt="" loading="lazy"></a>
+        <div class="home-programme-body">
+          <p class="home-programme-kicker">8 weeks &middot; Summer training</p>
+          <h3>Summer <span>Shred</span></h3>
+          <p>Work towards feeling leaner and stronger with structured training and nutrition guidance for real life.</p>
+          <div class="home-programme-price"><strong>&pound;55</strong><span>One payment</span></div>
+          <a class="home-button" href="/summer-shred.html">View Summer Shred <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 	<!-- End Free Trial CTA -->
 
 	<!-- About One -->
@@ -1078,6 +1085,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="assets/js/jquery-ui.js"></script>
 <script src="assets/js/element-in-view.js"></script>
 <script src="assets/js/script.js"></script>
+
+<nav class="home-mobile-actions" aria-label="Get started" hidden>
+  <a class="home-button home-button-outline" href="https://www.ptdistinction.com/package_signup?str=1&amp;apk=WM6G8GUGG81899743&amp;pkid=45389" target="_blank" rel="noopener">Free Trial</a>
+  <a class="home-button" href="#pricing">Choose Plan</a>
+</nav>
+<script src="assets/js/vessl-home.js"></script>
 
 <!-- UTM Parameter Tracking -->
 <script>
